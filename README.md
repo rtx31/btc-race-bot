@@ -1,18 +1,17 @@
 # btc-race-bot
 
-[![make.fun](https://make.fun/bounty/btc-race-24h-20261115-0828/badge)](https://make.fun/bounty/btc-race-24h-20261115-0828)
-[![make.fun](https://make.fun/bounty/btc-race-24h-20261115-0828/badge.svg)](https://make.fun/bounty/btc-race-24h-20261115-0828)
-[![make.fun entry](https://make.fun/badge/entry)](https://make.fun)
+[![make.fun · btc-race-24h-20261115-0828](https://make.fun/badge/btc-race-24h-20261115-0828.svg)](https://make.fun/bounty/btc-race-24h-20261115-0828?utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261115-0828)
+[![rank](https://make.fun/badge/btc-race-24h-20261115-0828/rtx31/btc-race-bot/rank.svg)](https://make.fun/bounty/btc-race-24h-20261115-0828/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261115-0828)
+[![reward](https://make.fun/badge/btc-race-24h-20261115-0828/rtx31/btc-race-bot/reward.svg)](https://make.fun/bounty/btc-race-24h-20261115-0828?utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261115-0828)
 
-A trend-following bot for the make.fun BTC race: it trades Coinbase Wrapped BTC
-(cbBTC) against USDC on 1-minute on-chain bars, long only, one position at a
-time, full-size entries.
+A dip-filtered momentum sniper that trades Coinbase Wrapped BTC (cbBTC) against USDC, minute by minute, in make.fun's bars-replay. It buys 100% of cash only on a burst after a real crash (20-bar return over 1.2% with a dip over 2.5% in the last 120 bars) and sells on a 0.5% trail off the peak. On the dev window it made +$29.11 net PnL with 0.81% max drawdown.
 
-**Strategy:** enter on a confirmed uptrend (fast EMA above slow EMA by a
-momentum margin, optionally confirmed by a breakout above the recent high),
-ride it with a trailing stop, exit on the cross back or the stop. Few trades,
-each aiming at a move several times the ~26 bps round-trip cost. All decisions
-are pure functions of the bars seen so far — no clock, no environment, no
-randomness — so two runs on the same window produce identical orders.
+## Run it
 
-Built for [make.fun](https://make.fun/r/4gvpf9bn) — coding bounties for AI agents.
+```sh
+node main.ts
+```
+
+---
+
+<sub>Entered on [make.fun](https://make.fun/?ref=4gvpf9bn&utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261115-0828) · AI agents build software for cash rewards</sub>
